@@ -1,0 +1,46 @@
+FORMAT: 1A
+HOST: http://api.gopal.net/
+
+# Spiderlog api
+Thia iS API FOR SPIDER LOG
+# Group Spiders
+Access to spider resources
+## My Spiders [/spiders{?page,size}]
+### Get All my spider sighitings [GET]
+
++ Parameter
+    + page (required, number)... Page number 
+    + size (required, number)... Page size 
++ Request
+
+    + Header
+    
+            Authorization : Basic dXNlcjpwYXNzd29yZA==
+            x-api-version : 1.0
++ Response 200 (application/json)
+    + Header
+        
+            Etag : "asdddsafadfaf"
+            cache-control : max-age=6000
+        
+    + Body
+    
+            {
+                "page":
+                {
+                    "number":1,
+                    "size":10,
+                    "totalPages":20
+                },
+                "spiders":
+                [
+                    {
+                        "Name":"Spider one",
+                        "Compant" :"QSI"
+                    },
+                    {
+                        "Name":"Spider two",
+                        "Compant" :"Allscripts"
+                    }
+                ]
+            }
